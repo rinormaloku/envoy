@@ -110,11 +110,11 @@ RoleBasedAccessControlFilter::decodeHeaders(Http::RequestHeaderMap& headers, boo
       config_->engine(callbacks_->route(), Filters::Common::RBAC::EnforcementMode::Enforced);
   if (engine != nullptr) {
     if (engine->allowed(*callbacks_->connection(), headers, callbacks_->streamInfo(), nullptr)) {
-      ENVOY_LOG(debug, "enforced allowed");
+      ENVOY_LOG(debug, "friendly enforced 1 allowed");
       config_->stats().allowed_.inc();
       return Http::FilterHeadersStatus::Continue;
     } else {
-      ENVOY_LOG(debug, "enforced denied");
+      ENVOY_LOG(debug, "friendly enforced 2 denied");
       callbacks_->sendLocalReply(Http::Code::Forbidden, "RBAC: access denied", nullptr,
                                  absl::nullopt, RcDetails::get().RbacAccessDenied);
       config_->stats().denied_.inc();

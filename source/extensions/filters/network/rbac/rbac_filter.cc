@@ -94,7 +94,7 @@ RoleBasedAccessControlFilter::checkEngine(Filters::Common::RBAC::EnforcementMode
             Filters::Common::RBAC::DynamicMetadataKeysSingleton::get().EngineResultAllowed,
             effective_policy_id);
       } else if (mode == Filters::Common::RBAC::EnforcementMode::Enforced) {
-        ENVOY_LOG(debug, "enforced allowed");
+        ENVOY_LOG(debug, "friendly enforced 3 allowed");
         config_->stats().allowed_.inc();
       }
       return Allow;
@@ -106,7 +106,7 @@ RoleBasedAccessControlFilter::checkEngine(Filters::Common::RBAC::EnforcementMode
             Filters::Common::RBAC::DynamicMetadataKeysSingleton::get().EngineResultDenied,
             effective_policy_id);
       } else if (mode == Filters::Common::RBAC::EnforcementMode::Enforced) {
-        ENVOY_LOG(debug, "enforced denied");
+        ENVOY_LOG(debug, "friendly enforced 4 denied");
         config_->stats().denied_.inc();
       }
       return Deny;
