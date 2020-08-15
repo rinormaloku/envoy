@@ -1,5 +1,7 @@
 #pragma once
 
+#include "common/common/logger.h"
+
 #include "envoy/http/filter.h"
 #include "envoy/http/header_map.h"
 #include "envoy/network/connection.h"

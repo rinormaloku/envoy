@@ -11,7 +11,7 @@ namespace Filters {
 namespace Common {
 namespace RBAC {
 
-class RoleBasedAccessControlEngineImpl : public RoleBasedAccessControlEngine, NonCopyable {
+class RoleBasedAccessControlEngineImpl : public RoleBasedAccessControlEngine, NonCopyable, Logger::Loggable<Logger::Id::config> {
 public:
   RoleBasedAccessControlEngineImpl(const envoy::config::rbac::v3::RBAC& rules);
 

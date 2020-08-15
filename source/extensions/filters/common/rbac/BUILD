@@ -56,6 +56,7 @@ envoy_cc_library(
     deps = [
         "//source/extensions/filters/common/rbac:engine_interface",
         "//source/extensions/filters/common/rbac:matchers_lib",
+        "//source/common/common:minimal_logger_lib",
         "@envoy_api//envoy/config/rbac/v3:pkg_cc_proto",
     ],
 )

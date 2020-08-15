@@ -34,6 +34,9 @@ bool RoleBasedAccessControlEngineImpl::allowed(const Network::Connection& connec
 
   for (const auto& policy : policies_) {
     if (policy.second->matches(connection, headers, info)) {
+      
+      ENVOY_LOG(debug, "in engine_impl $$$ RINOR $$$");
+      
       matched = true;
       if (effective_policy_id != nullptr) {
         *effective_policy_id = policy.first;
